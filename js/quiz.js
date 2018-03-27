@@ -1,7 +1,8 @@
 var selectedSize;
 var selectedFloor;
 var selectedCute;
-    
+
+    //iterate through 'name' input radios using onclick to store 'value' then call checkAnswers function
     var radios = document.forms["form"].elements["size"];
     for(var i = 0, max = radios.length; i < max; i++) {
         radios[i].onclick = function() {
@@ -23,7 +24,7 @@ var selectedCute;
             checkAnswers();
         }
     }
-
+//store selected 'value' in a key to be accessed later
 function checkAnswers(){
     localStorage.setItem('size', selectedSize);
     localStorage.setItem('floor', selectedFloor);

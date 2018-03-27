@@ -1,7 +1,10 @@
+
+//pull values from 'key' and store into variables
 var selectedSize = localStorage.getItem('size');
 var selectedFloor = localStorage.getItem('floor');
 var selectedCute = localStorage.getItem('cute');
 
+//constructor for Dog object
 function Dog (image, breed, bio) {
     this.image = image;
     this.breed = breed;
@@ -30,6 +33,7 @@ var dachshund = new Dog ('breeds/dachshund.jpg', 'Dachshund', 'Dachshunds are pl
 var klee = new Dog ('breeds/klee.png', 'Alaskan Klee Kai', 'The Alaskan Klee Kai is a highly intelligent, playful, curious and high energy breed.');
 var frenchie = new Dog ('breeds/frenchie.jpg', 'French Bulldog', 'The French Bulldog, like many other companion dog breeds, requires close contact with humans.');
 
+//iternate through each size, floor & cute to access predetermined dog object to be called through SetFinalVariables
 if (selectedSize === 'large'){
     if (selectedFloor === 'shaggy'){
         if (selectedCute === 'lion'){
@@ -91,6 +95,7 @@ else if (selectedSize === 'closet'){
     }
 }  
 
+//call dog object & write into result.html elements
 function SetFinalVariables(dog) {
     document.getElementById("resultBreed").innerHTML = dog.breed;
     document.getElementById("resultBio").innerHTML = dog.bio;
@@ -103,6 +108,4 @@ function SetFinalVariables(dog) {
             };
 
         img.src = dog.image;
-        
-
 }
